@@ -1,0 +1,103 @@
+html {
+    overflow: auto;
+}
+
+body {
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0 ,0 ,0, 0.1);
+    margin-bottom: 40px;
+}
+
+.barra {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.barra ul {
+    list-style: none;
+    padding: 0;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.link:hover {
+    background-color: rgba(0, 180, 216, 0.1);
+}
+
+.slider {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.slider button:hover {
+    background: rgba(0 ,0 ,0, 0.7);
+}
+
+footer {
+    background-color: rgba(0, 90, 120, 1);
+    padding: 40px 0;
+    margin-top: 40px;
+}
