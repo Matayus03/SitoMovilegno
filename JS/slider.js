@@ -109,9 +109,9 @@ slider.addEventListener("touchend", (e) => {
     let endX = e.changedTouches[0].clientX;
     let diff = startX - endX;
 
-    if (diff > 50) {
+    if (diff > 10) {
         nextSlide();
-    } else if (diff < -50) {
+    } else if (diff < -10) {
         prevSlide();
     }
 
