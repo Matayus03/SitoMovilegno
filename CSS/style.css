@@ -188,6 +188,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+    *:hover {
+        all: unset;
+    }
+    
     .barra {
         position: relative;
         display: flex;
@@ -246,6 +250,8 @@ footer {
         color: #000;
         display: block;
         text-align: right;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .slider {
