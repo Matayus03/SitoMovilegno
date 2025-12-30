@@ -192,6 +192,10 @@ footer {
         all: unset;
     }
 
+    body.menu-attivo {
+        overflow: hidden;
+    }
+
     .barra {
         position: relative;
         display: flex;
