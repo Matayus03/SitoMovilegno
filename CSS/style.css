@@ -191,6 +191,11 @@ footer {
     *:hover {
         all: unset;
     }
+
+    a, button {
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+    }
     
     .barra {
         position: relative;
@@ -250,8 +255,6 @@ footer {
         color: #000;
         display: block;
         text-align: right;
-        outline: none;
-        -webkit-tap-highlight-color: transparent;
     }
 
     .slider {
