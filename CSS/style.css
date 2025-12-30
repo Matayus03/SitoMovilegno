@@ -206,28 +206,44 @@ footer {
         border: none;
         cursor: pointer;
         z-index: 2000;
-        position: absolute;
-        right: 20px;
-        top: 15px;
+        position: relative;
     }
 
     .menu {
-        display: none !important;
         flex-direction: column;
         position: absolute;
-        top: 100%;
-        left: 0;
-        width: 80%;
+        top: 50px;
+        right: 0;
+        width: 200px;
         background: white;
+        list-style: none;
         padding: 10px 0;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        z-index: 9;
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-end;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 15;
     }
 
     .menu.attivo {
-        display: flex !important;
-        flex-direction: column;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .menu li {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .menu li a {
+        text-decoration: none;
+        color: #000;
+        display: block;
+        text-align: right;
     }
 
     .slider {
