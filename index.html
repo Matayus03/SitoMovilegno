@@ -11,28 +11,39 @@
 
         <header>
             <div class="barra">
-                <!--AGGIUNGERE LOGO-->
-                <h1>MOVILEGNO</h1><!--SOSTITUIRE CON LOGO-->
+                <a href="index.html" class="logo-link">
+                    <img class="logo" src="Immagini/logoMovilegno.png" alt="Movilegno">
+                </a>
                 <button class="menu-toggle" aria-label="Apri Menu">☰</button>
                 <ul class="menu">
                     <li><a href="index.html" class="link">Home</a></li>
-                    <li><a href="Pages/azienda.html" class="link">Azienda</a></li>
-                    <li><a href="Pages/prodotti.html" class="link">Prodotti</a></li>
-                    <li><a href="Pages/news.html" class="link">News</a></li>
-                    <li><a href="Pages/contatti.html" class="link">Contatti</a></li>
+                    <li><a href="Pagine/azienda.html" class="link">Azienda</a></li>
+                    <li><a href="Pagine/prodotti.html" class="link">Prodotti</a></li>
+                    <li><a href="Pagine/news.html" class="link">News</a></li>
+                    <li><a href="Pagine/contatti.html" class="link">Contatti</a></li>
+                    <li><a href="Pagine/usato.html" class="link">Usato</a></li>
                 </ul>
             </div>
         </header>
 
         <main id="principale" class="wrap">
             <div class="slider">
+                <div class="overlay">
+                    <h2 id="overlay-title"></h2>
+                    <a id="overlay-btn" class="btn-vedi" href="#">Vedi</a>
+                </div>
                 <!--MODIFICARE IMMAGINI-->
-                <img src="Immagini/prova1.jpeg" class="slide active">
-                <img src="Immagini/prova2.jpeg" class="slide">
-                <img src="Immagini/prova3.jpeg" class="slide">
+                <img src="Immagini/ImpiantiSegheria.png" class="slide active">
+                <img src="Immagini/ImpiantiLegnaDaArdere.png" class="slide">
+                <img src="Immagini/Refilatrice.png" class="slide">
+                <img src="Immagini/Usato.png" class="slide">
 
-                <button class="prev">&lt;</button>
-                <button class="next">&gt;</button>
+                <button class="prev">
+                    <img src="FileSVG/FSinistra.svg">
+                </button>
+                <button class="next">
+                    <img src="FileSVG/FDestra.svg">
+                </button>
             </div>
             <section class="hero" aria-label="Benvenuti">
                 <h1>Movimentare il Legno</h1> <!--DA MODIFICARE-->
@@ -47,5 +58,6 @@
             <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
         </footer>
         <script src="JS/slider.js"></script>
+        <script src="JS/menu-toggle.js"></script>
     </body>
 </html>
