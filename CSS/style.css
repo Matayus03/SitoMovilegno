@@ -1,11 +1,13 @@
 html {
     overflow: auto;
+    overflow-x: hidden;
 }
 
 body {
     overflow: auto;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
