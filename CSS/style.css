@@ -10,24 +10,26 @@ body {
 
 header {
     background-color: white;
-    padding: 20px;
+    padding: 0;
     box-shadow: 0 2px 5px rgba(0 ,0 ,0, 0.1);
-    margin-bottom: 40px;
+    margin-bottom: 0;
 }
 
 .barra {
     display: flex;
     align-items: center;
-    padding: 10px 10px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .barra ul {
     list-style: none;
     padding: 0;
-    margin: auto;
+    margin: 0;
     display: flex;
     gap: 20px;
-    padding: 15px 0;
 }
 
 .menu-toggle {
@@ -38,6 +40,22 @@ header {
     cursor: pointer;
     color: white;
     margin-left: auto;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.logo {
+    border-radius: 10px;
+}
+
+.logo:hover {
+    background-color: rgba(0, 180, 216, 0.1);
 }
 
 .link {
@@ -54,9 +72,18 @@ header {
 .slider {
     position: relative;
     max-width: 100%;
-    height: 400px;
-    margin: 40px auto;
+    height: 60vh;
+    margin: 0 auto;
     overflow: hidden;
+}
+
+@keyframes zoomLento {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
 }
 
 .slide {
@@ -72,16 +99,24 @@ header {
     opacity: 1;
 }
 
-.slider button {
+.slide.zoom {
+    animation: zoomLento 4s linear forwards;
+}
+
+.prev, .next {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: none;
-    font-size: 30px;
-    padding: 10px 15px;
-    cursor: pointer;
 }
 
 .prev {
@@ -92,12 +127,130 @@ header {
     right: 10px;
 }
 
-.slider button:hover {
-    background: rgba(0 ,0 ,0, 0.7);
+.prev img, .next img {
+    width: 50px;
+    height: 50px;
+    display: block;
 }
+
+.prev:focus, .next:focus {
+    outline: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 10;
+}
+
+.overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.overlay .btn-vedi {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 180, 216, 0.8);
+    color: white;
+    text-decoration: none;
+}
+
+.overlay h2, .overlay .btn-vedi {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.overlay h2[style*="opacity: 1"], .overlay .btn-vedi[style*="opacity: 1"] {
+    pointer-events: auto;
+}
+
+.overlay .btn-vedi:hover {
+    background-color: rgba(0, 180, 216, 1);
+}
+
+
+
 
 footer {
     background-color: rgba(0, 90, 120, 1);
     padding: 40px 0;
     margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .barra {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        font-size: 28px;
+        color: black;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2000;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .menu {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 80%;
+        background: white;
+        padding: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 9;
+    }
+
+    .menu.attivo {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .slider {
+        height: 250px;
+    }
+
+    .overlay h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .overlay .btn-vedi {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .prev, .next {
+        width: 40px;
+        height: 40px;
+    }
+
+    .prev img, .next img {
+        width: 20px;
+        height: 20px;
+    }
 }
