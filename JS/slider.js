@@ -111,7 +111,7 @@ slider.addEventListener("touchend", (e) => {
 
     if (diff > 50) {
         nextSlide();
-    } else if (diff < 50) {
+    } else if (diff < -50) {
         prevSlide();
     }
 
