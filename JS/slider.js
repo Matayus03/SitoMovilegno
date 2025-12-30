@@ -3,47 +3,96 @@ const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
 const slider = document.querySelector(".slider");
 
+const overlayTitle = document.getElementById("overlay-title");
+const overlayBtn = document.getElementById("overlay-btn");
+
+
+const slideData = [
+    { title: "Impianti di segheria", url: "Pagine/azienda.html" },
+    { title: "Impianti di legna da ardere", url: "Pagine/prodotti.html" },
+    { title: "Refilatrice", url: "Pagine/news.html" }
+    //DA MODIFICARE/AGGIUNGERE
+];
+
+
 let index = 0;
 let interval;
-let pauseTimeout;
+let isHovering = false;
 
+slides[index].classList.add("zoom");
+updateOverlay(index);
 //Mostra Slide
 function showSlide(i) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[i].classList.add("active");
+    const current = slides[index];
+    const next = slides[i];
+
+    current.classList.remove("active");
+
+    next.classList.remove("zoom");
+    next.offsetHeight;
+    next.classList.add("active", "zoom");
+
+    index = i;
+
+    updateOverlay(i);
 }
 
 //Avanti
 function nextSlide() {
-    index = (index + 1) % slides.length;
-    showSlide(index);
+    showSlide((index + 1) % slides.length);
 }
 
 //Indietro
 function prevSlide() {
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
+    showSlide((index - 1 + slides.length) % slides.length);
 }
 
 //Autoplay
 function startAutoplay() {
+    if(isHovering) return;
+    stopAutoplay();
     interval = setInterval(nextSlide, 4000);
 }
 
-//Ferma Autoplay e riavvia dopo 2 secondi
-function pauseAutoplay() {
+//Stop Autoplay
+function stopAutoplay() {
     clearInterval(interval);
-    clearTimeout(pauseTimeout);
-    pauseTimeout = setTimeout(startAutoplay, 2000);
+    interval = null;
 }
 
 //Eventi Pulsanti
-nextBtn.addEventListener("click", () => { nextSlide(); pauseAutoplay(); });
-prevBtn.addEventListener("click", () => { prevSlide(); pauseAutoplay(); });
+nextBtn.addEventListener("click", () => { stopAutoplay(); nextSlide(); startAutoplay(); });
+prevBtn.addEventListener("click", () => { stopAutoplay(); prevSlide(); startAutoplay(); });
 
 //Ferma Autoplay al passaggio del mouse
-slider.addEventListener("mouseenter", () => { clearInterval(interval); });
-slider.addEventListener("mouseleave", () => { pauseAutoplay(); });
+slider.addEventListener("mouseenter", () => { stopAutoplay(); });
+slider.addEventListener("mouseleave", () => { startAutoplay(); });
+
+//Ferma slider quando mouse sopra bottoni
+[nextBtn, prevBtn].forEach(btn => {
+    btn.addEventListener("mouseenter", () => {
+        isHovering = true;
+        stopAutoplay()
+    });
+    btn.addEventListener("mouseleave", () => {
+        isHovering = false;
+        startAutoplay();
+    });
+});
+
+//Testo e tasto Overlay
+function updateOverlay(i) {
+    overlayTitle.style.opacity = 0;
+    overlayBtn.style.opacity = 0;
+
+    setTimeout(() => {
+        overlayTitle.textContent = slideData[i].title;
+        overlayBtn.href = slideData[i].url;
+
+        overlayTitle.style.opacity = 1;
+        overlayBtn.style.opacity = 1;
+    }, 600);
+}
 
 //Avvia Autoplay
 startAutoplay();
