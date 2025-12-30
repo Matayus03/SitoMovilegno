@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="../CSS/style.css">
+        <title>Contatti - Movilegno</title>
+    </head>
+    
+    <body>
+        <header>
+            <div class="barra">
+                <img class="logo" src="../Immagini/logoMovilegno.png">
+                <button class="menu-toggle" aria-label="Apri Menu">☰</button>
+                <ul class="menu">
+                    <li><a href="../index.html" class="link">Home</a></li>
+                    <li><a href="azienda.html" class="link">Azienda</a></li>
+                    <li><a href="prodotti.html" class="link">Prodotti</a></li>
+                    <li><a href="news.html" class="link">News</a></li>
+                    <li><a href="contatti.html" class="link">Contatti</a></li>
+                    <li><a href="usato.html" class="link">Usato</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main id="principale" class="wrap">
+            <section class="hero">
+                <h1>CONTATTI</h1>
+                <p>
+                    Movilegno SRL<br>
+                </p>
+            </section>
+            
+            <iframe title="mappa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2777.4425399989814!2d11.842735115669967!3d45.816927979105494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477b2eb7816f0461%3A0x786eedb35cd10956!2sVia%20Asolana%2C%2026G%2C%2031017%20Crespano%20del%20Grappa%20TV%2C%20Italia!5e0!3m2!1sit!2sit!4v1703280000000!5m2!1sit!2sit" width="100%" height="340" style="border:0;"></iframe>
+        </main>
+
+        <footer>
+            <small class="footer-text">
+                © 2016 - <span id="year"></span> Movilegno srl - Via Asolana, 26G - 31017 Crespano del Grappa - TV
+            </small>
+            <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+        </footer>
+    </body>
+</html>
