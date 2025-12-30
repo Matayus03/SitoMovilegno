@@ -99,24 +99,21 @@ startAutoplay();
 
 //Aggiunta Touch-Friendly
 let startX = 0;
-let endX = 0;
 
 slider.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
     stopAutoplay();
 });
 
-slider.addEventListener("touchmove", (e) => {
-    endX = e.touches[0].clientX;
-});
-
-slider.addEventListener("touchend", () => {
+slider.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
     let diff = startX - endX;
 
-    if (diff < 50) {
+    if (diff > 50) {
         nextSlide();
-    } else if (diff < -50) {
+    } else if (diff < 50) {
         prevSlide();
     }
+
     startAutoplay();
 });
