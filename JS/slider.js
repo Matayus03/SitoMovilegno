@@ -17,7 +17,8 @@ const slideData = [
 
 let index = 0;
 let interval;
-let isHovering = false;
+let isHoveringSlider = false;
+let isHoveringButton = false;
 
 slides[index].classList.add("zoom");
 updateOverlay(index);
@@ -49,7 +50,7 @@ function prevSlide() {
 
 //Autoplay
 function startAutoplay() {
-    if(isHovering) return;
+    if(isHoveringSlider || isHoveringButton) return;
     stopAutoplay();
     interval = setInterval(nextSlide, 4000);
 }
@@ -65,18 +66,24 @@ nextBtn.addEventListener("click", () => { stopAutoplay(); nextSlide(); startAuto
 prevBtn.addEventListener("click", () => { stopAutoplay(); prevSlide(); startAutoplay(); });
 
 //Ferma Autoplay al passaggio del mouse
-slider.addEventListener("mouseenter", () => { stopAutoplay(); });
-slider.addEventListener("mouseleave", () => { startAutoplay(); });
+slider.addEventListener("mouseenter", () => {
+    isHoveringSlider = true;
+    stopAutoplay();
+});
+slider.addEventListener("mouseleave", () => {
+    isHoveringSlider = false;
+    if (!isHoveringButton) startAutoplay();
+});
 
 //Ferma slider quando mouse sopra bottoni
 [nextBtn, prevBtn].forEach(btn => {
     btn.addEventListener("mouseenter", () => {
-        isHovering = true;
+        isHoveringButton = true;
         stopAutoplay()
     });
     btn.addEventListener("mouseleave", () => {
-        isHovering = false;
-        startAutoplay();
+        isHoveringButton = false;
+        if (!isHoveringSlider) startAutoplay();
     });
 });
 
@@ -107,7 +114,7 @@ slider.addEventListener("touchstart", (e) => {
 
 slider.addEventListener("touchend", (e) => {
     let endX = e.changedTouches[0].clientX;
-    let diff = startX - endX;
+    let diff = endX - startX;
 
     if (diff > 30) {
         nextSlide();
