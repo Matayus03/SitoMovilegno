@@ -192,16 +192,6 @@ footer {
         all: unset;
     }
 
-    a, button {
-        outline: none !important;
-        -webkit-tap-highlight-color: transparent;
-    }
-    
-    a:active, button:active, a:focus, button:focus {
-        outline: none !important;
-        box-shadow: none !important;
-    }
-
     .barra {
         position: relative;
         display: flex;
