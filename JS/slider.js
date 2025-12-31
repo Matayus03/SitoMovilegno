@@ -63,17 +63,15 @@ function stopAutoplay() {
 
 //Eventi Pulsanti
 [nextBtn, prevBtn].forEach(btn => {
-    btn.addEventListener("touchstart", (e) => {
-        e.preventDefault();
-        stopAutoplay();
-    });
-
     btn.addEventListener("click", (e) => {
         e.preventDefault();
         stopAutoplay();
 
-        if (btn == nextBtn) nextSlide();
-        else prevSlide();
+        if (btn === nextBtn) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
 
         startAutoplay();
     });
@@ -137,4 +135,4 @@ slider.addEventListener("touchend", (e) => {
     }
 
     startAutoplay();
-});
+}, { passive: false });
