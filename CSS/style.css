@@ -192,8 +192,8 @@ footer {
         all: unset;
     }
 
-    body.menu-attivo {
-        overflow: hidden;
+    button {
+        touch-action: manipulation;
     }
 
     .barra {
@@ -254,6 +254,10 @@ footer {
         color: #000;
         display: block;
         text-align: right;
+    }
+
+    .slide {
+        pointer-events: none;
     }
 
     .slider {
