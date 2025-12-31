@@ -188,9 +188,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-    *:hover {
-        all: unset;
-    }
 
     button {
         touch-action: manipulation;
@@ -282,5 +279,11 @@ footer {
     .prev img, .next img {
         width: 20px;
         height: 20px;
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        touch-action: manipulation;
     }
 }
