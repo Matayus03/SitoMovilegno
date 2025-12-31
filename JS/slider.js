@@ -62,8 +62,22 @@ function stopAutoplay() {
 }
 
 //Eventi Pulsanti
-nextBtn.addEventListener("click", () => { stopAutoplay(); nextSlide(); startAutoplay(); });
-prevBtn.addEventListener("click", () => { stopAutoplay(); prevSlide(); startAutoplay(); });
+[nextBtn, prevBtn].forEach(btn => {
+    btn.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        stopAutoplay();
+    });
+
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        stopAutoplay();
+
+        if (btn == nextBtn) nextSlide();
+        else prevSlide();
+
+        startAutoplay();
+    });
+});
 
 //Ferma Autoplay al passaggio del mouse
 slider.addEventListener("mouseenter", () => {
