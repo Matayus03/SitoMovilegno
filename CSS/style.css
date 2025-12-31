@@ -189,10 +189,6 @@ footer {
 
 @media (max-width: 600px) {
 
-    button {
-        touch-action: manipulation;
-    }
-
     .barra {
         position: relative;
         display: flex;
@@ -275,11 +271,5 @@ footer {
     .prev img, .next img {
         width: 20px;
         height: 20px;
-    }
-
-    * {
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        touch-action: manipulation;
     }
 }
