@@ -253,10 +253,6 @@ footer {
         text-align: right;
     }
 
-    .slide {
-        pointer-events: none;
-    }
-
     .slider {
         height: 250px;
     }
