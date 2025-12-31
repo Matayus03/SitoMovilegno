@@ -266,6 +266,7 @@ footer {
     .prev, .next {
         width: 40px;
         height: 40px;
+        z-index: 10;
     }
 
     .prev img, .next img {
