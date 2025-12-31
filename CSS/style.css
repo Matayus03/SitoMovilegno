@@ -191,6 +191,10 @@ footer {
 
 @media (max-width: 600px) {
 
+    a, button {
+        -webkit-tap-highlight-color: transparent;
+    }
+
     button {
         touch-action: manipulation;
     }
@@ -205,6 +209,10 @@ footer {
 
     .logo {
         height: 40px;
+    }
+
+    .logo:hover {
+        background-color: transparent;
     }
 
     .menu-toggle {
@@ -267,7 +275,7 @@ footer {
     .overlay h2 {
         font-size: 1.4rem;
         margin-bottom: 15px;
-    }
+    }hover
 
     .overlay .btn-vedi {
         padding: 8px 16px;
@@ -283,5 +291,9 @@ footer {
     .prev img, .next img {
         width: 20px;
         height: 20px;
+    }
+
+    .link:hover {
+        background-color: transparent;
     }
 }
