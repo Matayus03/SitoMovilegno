@@ -6,6 +6,9 @@
     
         <title>Home - Movilegno</title>
         <link rel="stylesheet" href="CSS/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
 
@@ -14,15 +17,31 @@
                 <a href="index.html" class="logo-link">
                     <img class="logo" src="Immagini/logoMovilegno.png" alt="Movilegno">
                 </a>
-                <button class="menu-toggle" aria-label="Apri Menu">☰</button>
-                <ul class="menu">
-                    <li><a href="index.html" class="link">Home</a></li>
-                    <li><a href="Pagine/azienda.html" class="link">Azienda</a></li>
-                    <li><a href="Pagine/prodotti.html" class="link">Prodotti</a></li>
-                    <li><a href="Pagine/news.html" class="link">News</a></li>
-                    <li><a href="Pagine/contatti.html" class="link">Contatti</a></li>
-                    <li><a href="Pagine/usato.html" class="link">Usato</a></li>
-                </ul>
+                <div class="menu-container">
+                    <button class="menu-toggle" aria-label="Apri Menu">
+                        <img class="menu-svg" src="FileSVG/Menu.svg">
+                    </button>
+                    <ul class="menu">
+                        <li><a href="index.html" class="link">Home</a></li>
+                        <li><a href="Pagine/azienda.html" class="link">Azienda</a></li>
+                        <li class="has-submenu">
+                            <button class="submenu-toggle" aria-label="Apri submenu">
+                                <span class="icon-wrapper">
+                                    <img src="FileSVG/FGiu.svg" class="arrow-down">
+                                </span>    
+                            </button>
+                            <a href="Pagine/prodotti.html" class="link">Prodotti</a>
+                            <ul class="submenu">
+                                <li><a href="Pagine/ImpiantiDiSegheria.html">Impianti di segheria</a></li>
+                                <li><a href="Pagine/ImpiantiLegnaDaArdere.html">Impianti di legna da ardere</a></li>
+                                <li><a href="Pagine/Refilatrice.html">Refilatrice</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="Pagine/news.html" class="link">News</a></li>
+                        <li><a href="Pagine/contatti.html" class="link">Contatti</a></li>
+                        <li><a href="Pagine/usato.html" class="link">Usato</a></li>
+                    </ul>
+                </div>
             </div>
         </header>
 
@@ -46,9 +65,30 @@
                 </button>
             </div>
             <section class="hero" aria-label="Benvenuti">
-                <h1>Movimentare il Legno</h1> <!--DA MODIFICARE-->
+                <img src="Immagini/MovimentareIlLegno.png" class="hero-img" alt="MovimentareIlLegno"> <!--DA MODIFICARE-->
                 <p>Le soluzioni proposte da Movilegno nascono sempre da un attento studio preliminare delle esigenze del cliente: sappiamo, infatti, che soltanto una stretta collaborazione fra cliente e costruttore garantisce un buon risultato.</p> <!--DA MODIFICARE-->
             </section>
+
+            <!--DA VEDERE RISULTATO-->
+            <section class="info-section">
+                <div class="info-card">
+                    <h3>Azienda</h3>
+                    <p>Scopri la nostra storia e le nostre competenze nel settore del legno.</p>
+                    <a href="Pagine/azienda.html">Leggi di più</a>
+                </div>
+                <div class="info-card">
+                    <h3>Prodotti</h3>
+                    <p>Impianti e macchinari innovativi per ogni esigenza di lavorazione del legno</p>
+                    <a href="Pagine/prodotti.html">Scopri</a>
+                </div>
+                <div class="info-card">
+                    <h3>News</h3>
+                    <p>Rimani aggiornato sulle ultime novità.</p>
+                    <a href="Pagine/news.html">Leggi</a>
+                </div>
+            </section>
+
+
         </main>
 
         <footer>
