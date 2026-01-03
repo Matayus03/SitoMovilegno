@@ -10,7 +10,8 @@ const overlayBtn = document.getElementById("overlay-btn");
 const slideData = [
     { title: "Impianti di segheria", url: "Pagine/azienda.html" },
     { title: "Impianti di legna da ardere", url: "Pagine/prodotti.html" },
-    { title: "Refilatrice", url: "Pagine/news.html" }
+    { title: "Refilatrice", url: "Pagine/news.html" },
+    { title: "Usato", url: "Pagine/usato.html" }
     //DA MODIFICARE/AGGIUNGERE
 ];
 
