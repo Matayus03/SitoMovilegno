@@ -3,8 +3,15 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
         <title>Prodotti - Movilegno</title>
+        
         <link rel="stylesheet" href="../CSS/style.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     </head>
 
     <body>
@@ -13,15 +20,31 @@
                 <a href="../index.html" class="logo-link">
                     <img class="logo" src="../Immagini/logoMovilegno.png" alt="Movilegno">
                 </a>
-                <button class="menu-toggle" aria-label="Apri Menu">☰</button>
-                <ul class="menu">
-                    <li><a href="../index.html" class="link">Home</a></li>
-                    <li><a href="azienda.html" class="link">Azienda</a></li>
-                    <li><a href="prodotti.html" class="link">Prodotti</a></li>
-                    <li><a href="news.html" class="link">News</a></li>
-                    <li><a href="contatti.html" class="link">Contatti</a></li>
-                    <li><a href="usato.html" class="link">Usato</a></li>
-                </ul>
+                <div class="menu-container">
+                    <button class="menu-toggle" aria-label="Apri Menu">
+                        <img class="menu-svg" src="../FileSVG/Menu.svg">
+                    </button>
+                    <ul class="menu">
+                        <li><a href="../index.html" class="link">Home</a></li>
+                        <li><a href="azienda.html" class="link">Azienda</a></li>
+                        <li class="has-submenu">
+                            <button class="submenu-toggle" aria-label="Apri submenu">
+                                <span class="icon-wrapper">
+                                    <img src="../FileSVG/FGiu.svg" class="arrow-down">
+                                </span>    
+                            </button>
+                            <a href="prodotti.html" class="link">Prodotti</a>
+                            <ul class="submenu">
+                                <li><a href="ImpiantiDiSegheria.html">Impianti di segheria</a></li>
+                                <li><a href="ImpiantiLegnaDaArdere.html">Impianti di legna da ardere</a></li>
+                                <li><a href="Refilatrice.html">Refilatrice</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="news.html" class="link">News</a></li>
+                        <li><a href="contatti.html" class="link">Contatti</a></li>
+                        <li><a href="usato.html" class="link">Usato</a></li>
+                    </ul>
+                </div>
             </div>
         </header>
 
