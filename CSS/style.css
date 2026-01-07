@@ -146,7 +146,7 @@ header {
         display: block;
         padding: 12px 20px;
         font-size: 1rem;
-        color: #003f55;
+        color: black;
         text-decoration: none;
         border-radius: 20px;
         transition: background-color 0.25 ease, padding-left 0.25s ease;
@@ -373,7 +373,7 @@ header {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.4rem;
-    color: #004f70;
+    color: #8cc5d6;
 }
 
 .info-card p {
@@ -402,7 +402,7 @@ header {
 }
 
 footer {
-    background-color: #005a78;
+    background-color: #8cc5d6;
     color: #ffffff;
     padding: 30px 20px;
     font-size: 0.9rem;
@@ -429,7 +429,7 @@ footer .footer-text {
 
     .azienda-title {
         font-size: 2.5rem;
-        color: #005a78;
+        color: #8cc5d6;
         margin-bottom: 20px;
         font-weight: 700;
     }
@@ -439,6 +439,21 @@ footer .footer-text {
         line-height: 1.8;
         color: #333;
         text-align: justify;
+    }
+
+    .azienda-foto {
+        float: right;
+        width: 45%;
+        max-width: 420px;
+        margin: 0 0 20px 30px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0 ,0 ,0, 0.15);
+    }
+
+    .azienda-hero::after {
+        content: "";
+        display: block;
+        clear: both;
     }
 
     .azienda-values {
@@ -466,7 +481,7 @@ footer .footer-text {
     }
 
     .value-card h2 {
-        color: #005a78;
+        color: #8cc5d6;
         margin-bottom: 12px;
     }
 
@@ -479,7 +494,169 @@ footer .footer-text {
 /*FINE PARTE AZIENDA.HTML */
 
 
+/* INIZIO PARTE CONTATTI.HTML */
 
+    .contatti-hero {
+        background: #e6f7fb;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .contatti-hero h1 {
+        font-size: 2.4rem;
+        color: #8cc5d6;
+    }
+
+    .contatti-hero p {
+        max-width: 700px;
+        margin: 15px auto 0;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .contatti-main {
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 0 20px;
+        display: flex;
+        gap: 40px;
+    }    
+
+    .contatti-info {
+        flex: 1;
+        background-color: #f0f4f8;
+        padding: 30px;
+        border-radius: 16px;
+    }
+
+    .contatti-info h2 {
+        color: #8cc5d6;
+        margin-bottom: 25px;
+    }
+
+    .contatti-info p {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .contatti-info img {
+        width: 22px;
+        height: 22px;
+        filter: invert(25%);
+    }
+
+    .contatti-info a {
+        color: #005a78;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .contatti-info a:hover {
+        text-decoration: underline;
+    }
+
+    .contatti-form {
+        flex: 1;
+        background-color: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 6px 12px rgba(0 ,0 ,0, 0.1);
+    }
+
+    .contatti-form h2 {
+        color: #8cc5d6;
+        margin-bottom: 20px;
+    }
+
+    .contatti-form input,
+    .contatti-form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-family: inherit;
+        font-size: 0.95rem;
+    }
+
+    .contatti-form input:focus,
+    .contatti-form textarea:focus {
+        outline: none;
+        border-color: #00b4d8;
+    }
+
+    .contatti-form button {
+        background-color: #00b4d8;
+        color: white;
+        border: none;
+        padding: 12px 22px;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .contatti-form button:hover {
+        background-color: #0096b8;
+    }
+
+    .contatti-mappa {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    iframe[title="mappa"] {
+        margin-top: 60px;
+        border-radius: 16px;
+        width: 100%;
+        height: 500px;
+        box-shadow: 0 8px 20px rgba(0 ,0 ,0, 0.15);
+    }
+
+    .contatti-cta {
+        margin: 80px auto 0;
+        padding: 50px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #8cc5d6, #6fb8ce);
+        border-radius: 24px;
+        max-width: 1000px;
+        box-shadow: 0 12px 30px rgba(0 ,0 ,0, 0.15);
+        margin-bottom: 40px;
+    }
+
+    .contatti-cta h2 {
+        color: #ffffff;
+        font-size: 2rem;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+
+    .contatti-cta a {
+        display: inline-block;
+        background-color: #ffffff;
+        color: #005a78;
+        padding: 14px 36px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 999px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        box-shadow: 0 10px 25px rgba(0 ,0 ,0, 0.2);
+    }
+
+    .contatti-cta a:hover,
+    .contatti-cta a:focus-visible {
+        background-color: #f0fbff;
+        transform: translateY(-3px);
+        box-shadow: 0 14px 32px rgba(0 ,0 ,0, 0.25);
+    }
+
+/* FINE PARTE CONTATTI.HTML */
 
 
 
@@ -646,6 +823,21 @@ footer .footer-text {
         background-color: transparent;
     }
 
-    
+    /* PARTE AZIENDA.HTML SMARTPHONE */
+
+    .azienda-foto {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+
+        margin: 0 auto 20px auto;
+        border-radius: 14px;
+    }
+
+    .azienda-hero {
+        overflow-x: hidden;
+    }
 
 }
